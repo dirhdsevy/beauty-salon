@@ -6,26 +6,34 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Home</title>
       <link rel="stylesheet" href="./styles.css">
-  </head>
+      
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
   <body>
 
     <header>
-      <img src="images/logo.svg" alt="Logo">
+      <img src="./images/logos/main-logo.svg" alt="Logo">
       <div class="box-header">
         <div class="left-header">
           <a href="index.html">Home</a>
           <a href="./pages/about-page.html">About Us</a>
           <a href="./pages/contact-page.html">Contact Us</a>
-          <button class="language-button"><span class="language-container js-language-container"></span><img src=""></button>
-          <div class="list-language">
-            <button>EN</button>
-            <button>UA</button>
-          </div>
         </div>
+
+        <button class="language-button"><span class="language-container js-language-container">EN</span><img src="./images/details/arrow-header.svg" alt="Arrow"></button>
+          
+        <div class="list-language">
+          <button>EN</button>
+          <button>UA</button>
+        </div>
+
         <div class="right-header">
           <button class="login-button">Login</button>
           <button class="signup-button">Signup</button>
         </div>
+
       </div>
     </header>
 
@@ -34,69 +42,74 @@
         <div class="hero-content">
 
           <div class="hero-text-box">
-            <span class="subtitle"><img src="" alt="">HAIR SALON, MASSEUSE, BEAUTY SALON</span>
+            <div class="hero-logo-box">
+              <img src="./images/logos/cube.svg" alt="logo-hero">
+              <h3 class="hero-subtitle">HAIR SALON, MASSEUSE, BEAUTY SALON</h3>
+            </div>
             <h1 class="hero-title">Find a service close to you</h1>
             <p class="hero-text">There are many variation of passages are Ipsum available, majority have suffered alteration in some form.</p>
           </div>
 
           <div class="hero-search-box">
-            <div class="hero-search-box-left">
-              <h3 class="hero-search-box-title">Service Name</h3>
-              <input type="text" class="hero-search-input" placeholder="Book your services...">
-              <img src="" alt="">
+
+            <div class="hero-search-cell">
+              <h4 class="hero-search-box-title">Service Name</h4>
+              <div class="hero-search-box-input-box">
+                <input type="text" class="hero-search-input" placeholder="Book your services...">
+                <img src="./images/mini-icons/search.svg" alt="search">
+              </div>
             </div>
 
-            <div class="hero-search-box-right">
-              <h3 class="hero-search-box-title">Address</h3>
-              <input type="text" class="hero-search-input" placeholder="Where?">
-              <img src="" alt="">
+            <div class="hero-search-cell">
+              <h4 class="hero-search-box-title">Address</h4>
+              <div class="hero-search-box-input-box">
+                <input type="text" class="hero-search-input" placeholder="Where?">
+                <img src="./images/mini-icons/location.svg" alt="location">
+              </div>
             </div>
 
-            <button class="search-button">Search<img src="" alt=""></button>
+            <button class="search-button">Search<img src="images/mini-icons/search-1.svg" alt="search"></button>
           </div>
 
         </div>
       </section>
 
       <section class="procedures-scroll-section">
-        <button class="scroll-button-left"><img src="" alt=""></button>
+        <button class="scroll-button-left"><img src="images/details/arrow-scroll.svg" alt="<"></button>
 
-        <div class="procedures-scroll-cell">
-          <img src="" alt="">
-          <p>Makeup-artist</p>
+        <div class="scroll-middle">
+
+          <div class="procedures-scroll-cell">
+            <img src="images/procedures/makeup-artist.svg" alt="makeup artist">
+            <p>Makeup-artist</p>
+          </div>
+
+          <div class="procedures-scroll-cell">
+            <img src="images/procedures/wellnesscenter.svg" alt="wellnesscenter">
+            <p>Wellnesscenter</p>
+          </div>
+
+          <div class="procedures-scroll-cell">
+            <img src="images/procedures/berbersalon.svg" alt="barbersalon">
+            <p>Barbersalon</p>
+          </div>
+
+          <div class="procedures-scroll-cell">
+            <img src="images/procedures/frisorsalon.svg" alt="frisørsalon">
+            <p>Frisørsalon</p>
+          </div>
+
+          <div class="procedures-scroll-cell">
+            <img src="images/procedures/massagegeklinik.svg" alt="massageklinik">
+            <p>Massageklinik</p>
+          </div>
+
+          <div class="procedures-scroll-cell">
+            <img src="images/procedures/fodterapeut.svg" alt="fodterapeut">
+            <p>Fodterapeut</p>
+          </div>
         </div>
-
-        <button class="scroll-button-left"><img src="" alt=""></button>
-        <div class="procedures-scroll-cell">
-          <img src="" alt="">
-          <p>Wellnesscenter</p>
-        </div>
-
-        <button class="scroll-button-left"><img src="" alt=""></button>
-        <div class="procedures-scroll-cell">
-          <img src="" alt="">
-          <p>Barbersalon</p>
-        </div>
-
-        <button class="scroll-button-left"><img src="" alt=""></button>
-        <div class="procedures-scroll-cell">
-          <img src="" alt="">
-          <p>Frisørsalon</p>
-        </div>
-
-        <button class="scroll-button-left"><img src="" alt=""></button>
-        <div class="procedures-scroll-cell">
-          <img src="" alt="">
-          <p>Massageklinik</p>
-        </div>
-
-        <button class="scroll-button-left"><img src="" alt=""></button>
-        <div class="procedures-scroll-cell">
-          <img src="" alt="">
-          <p>Fotterapeut</p>
-        </div>
-
-        <button class="scroll-button-right"><img src="" alt=""></button>
+        <button class="scroll-button-right"><img src="images/details/arrow-scroll.svg" alt=">"></button>
       </section>
 
       <section class="experience-section">
@@ -107,17 +120,17 @@
         </div>
 
         <div class="experience-img-box">
-          <img src="" alt="">
+          <img class="experience-border-left-img" src="images/pngs/Rectangle-7.png" alt="image">
           <div class="experience-img-4">
 
-            <div class="experience-img-2">
-              <img src="" alt="">
-              <img src="" alt="">
+            <div class="experience-img-mid">
+              <img src="images/pngs/Rectangle-11-4.png" alt="image">
+              <img src="images/pngs/Rectangle-10.png" alt="image">
             </div>
 
-            <div class="experience-img-2">
-              <img src="" alt="">
-              <img src="" alt="">
+            <div class="experience-img-right">
+              <img class="experience-border-top-img" src="images/pngs/Rectangle-11-5.png" alt="image">
+              <img class="experience-border-bottom-img" src="images/pngs/Rectangle-10-1.png" alt="image">
             </div>
 
           </div>
@@ -126,111 +139,143 @@
 
       <section class="services-section">
         <div class="services-text-box">
-          <span class="subtitle">Our Services</span>
+          <h3 class="services-subtitle">Our Services</h3>
           <h2 class="services-title">Recommended</h2>
           <p class="services-text">Lorem ipsum dolor sit amet consectetur. Eu quis enim tempor et proin neque.</p>
         </div>
 
         <div class="services-scroll">
-          <button class="scroll-button-left"><img src="" alt=""></button>
+          <button class="scroll-button-left"><img src="images/details/arrow-scroll.svg" alt="<"></button>
           
           <div class="services-scroll-cell">
-            <img src="" alt="">
-            <div class="services-scroll-cell-rating">
-              <div class="rating-box">
-                <img src="" alt="">
-                <p>4.5</p>
-              </div>
+            <img class="services-scroll-cell-img" src="images/pngs/Rectangle-11.png" alt="image">
+            <div class="services-scroll-cell-content">
+              <div class="services-scroll-cell-rating">
+                <div class="rating-box">
+                  <img src="images/mini-icons/star.svg" alt="star">
+                  <p class="services-rating">4.5</p>
+                </div>
 
-              <p>104 reviews</p>
+                <p class="services-views">104 reviews</p>
+              </div>
+              <div class="services-cell-title-box">
+                <h4 class="services-cell-title">Salon Name</h4>
+                <div class="services-cell-text-box">
+                  <img src="images/mini-icons/placeholder 1.svg" alt="location-emoji">
+                  <p class="services-cell-text">Brookpark Ext, 27085, North Olmsted, 44070</p>
+                </div>
+              </div>
+              <button class="services-cell-button">Book Now</button>
             </div>
-            <h3 class="services-cell-title">Salon Name</h3>
-            <p class="services-cell-text"><img src="" alt="">Lorem ipsum dolor sit amet consectetur. Eu quis enim tempor et proin neque.</p>
-            <button class="services-cell-button">Book Now</button>
           </div>
 
           <div class="services-scroll-cell">
-            <img src="" alt="">
-            <div class="services-scroll-cell-rating">
-              <div class="rating-box">
-                <img src="" alt="">
-                <p>4.5</p>
-              </div>
+            <img class="services-scroll-cell-img" src="images/pngs/Rectangle-11-1.png" alt="image">
+            <div class="services-scroll-cell-content">
+              <div class="services-scroll-cell-rating">
+                <div class="rating-box">
+                  <img src="images/mini-icons/star.svg" alt="star">
+                  <p class="services-rating">4.5</p>
+                </div>
 
-              <p>104 reviews</p>
+                <p class="services-views">104 reviews</p>
+              </div>
+              <div class="services-cell-title-box">
+                <h4 class="services-cell-title">Salon Name</h4>
+                <div class="services-cell-text-box">
+                  <img src="images/mini-icons/placeholder 1.svg" alt="location-emoji">
+                  <p class="services-cell-text">2267 Main st, Fort Myers, 33901</p>
+                </div>
+              </div>
+              <button class="services-cell-button">Book Now</button>
             </div>
-            <h3 class="services-cell-title">Salon Name</h3>
-            <p class="services-cell-text"><img src="" alt="">Lorem ipsum dolor sit amet consectetur. Eu quis enim tempor et proin neque.</p>
-            <button class="services-cell-button">Book Now</button>
           </div>
-          
+
           <div class="services-scroll-cell">
-            <img src="" alt="">
-            <div class="services-scroll-cell-rating">
-              <div class="rating-box">
-                <img src="" alt="">
-                <p>4.5</p>
-              </div>
+            <img class="services-scroll-cell-img" src="images/pngs/Rectangle-11-2.png" alt="image">
+            <div class="services-scroll-cell-content">
+              <div class="services-scroll-cell-rating">
+                <div class="rating-box">
+                  <img src="images/mini-icons/star.svg" alt="star">
+                  <p class="services-rating">4.5</p>
+                </div>
 
-              <p>104 reviews</p>
+                <p class="services-views">104 reviews</p>
+              </div>
+              <div class="services-cell-title-box">
+                <h4 class="services-cell-title">Salon Name</h4>
+                <div class="services-cell-text-box">
+                  <img src="images/mini-icons/placeholder 1.svg" alt="location-emoji">
+                  <p class="services-cell-text">2267 Main st, Fort Myers, 33901</p>
+                </div>
+              </div>
+              <button class="services-cell-button">Book Now</button>
             </div>
-            <h3 class="services-cell-title">Salon Name</h3>
-            <p class="services-cell-text"><img src="" alt="">Lorem ipsum dolor sit amet consectetur. Eu quis enim tempor et proin neque.</p>
-            <button class="services-cell-button">Book Now</button>
           </div>
-          
+
           <div class="services-scroll-cell">
-            <img src="" alt="">
-            <div class="services-scroll-cell-rating">
-              <div class="rating-box">
-                <img src="" alt="">
-                <p>4.5</p>
-              </div>
+            <img class="services-scroll-cell-img" src="images/pngs/Rectangle-11-3.png" alt="image">
+            <div class="services-scroll-cell-content">
+              <div class="services-scroll-cell-rating">
+                <div class="rating-box">
+                  <img src="images/mini-icons/star.svg" alt="star">
+                  <p class="services-rating">4.5</p>
+                </div>
 
-              <p>104 reviews</p>
+                <p class="services-views">104 reviews</p>
+              </div>
+              <div class="services-cell-title-box">
+                <h4 class="services-cell-title">Salon Name</h4>
+                <div class="services-cell-text-box">
+                  <img src="images/mini-icons/placeholder 1.svg" alt="location-emoji">
+                  <p class="services-cell-text">2267 Main st, Fort Myers, 33901</p>
+                </div>
+              </div>
+              <button class="services-cell-button">Book Now</button>
             </div>
-            <h3 class="services-cell-title">Salon Name</h3>
-            <p class="services-cell-text"><img src="" alt="">Lorem ipsum dolor sit amet consectetur. Eu quis enim tempor et proin neque.</p>
-            <button class="services-cell-button">Book Now</button>
           </div>
           
-          <button class="scroll-button-right"><img src="" alt=""></button>
+          <button class="scroll-button-right"><img src="images/details/arrow-scroll.svg" alt=">"></button>
         </div>
       </section>
 
       <section class="testimonials-section">
-        <span class="subtitle">Testimonials</span>
-        <h2>What our Customers says...</h2>
+        <div class="testimonials-text-box">
+          <h3 class="testimonials-subtitle">Testimonials</h3>
+          <h2 class="testimonials-title">What our Customers says...</h2>
+        </div>
 
         <div class="testimonials-content">
-          <div class="testimonials-left">
-            <img src="" alt="">
-          </div>
-            <img src="" alt="">
-            <p class="testimonials-self-information">Leslie Alexander<br>Moncton, Canada</p>
+          <img src="images/pngs/Contents.png" alt="image">
+          <div class="testimonials-right">
+            <img class="testimonials-quotes-top" src="images/details/quotes-2.svg" alt="quotes">
+            <p class="testimonials-self-information">Leslie Alexander<br><span class="testimonials-self-city">Moncton, Canada</span></p>
             <h3 class="testimonials-title">Neque porro quisquam est qui dolum</h3>
             <p class="testimonials-text">“ It is a long established fact that a reader will be tracked distracted by the readable content of a page is when looking at its layout. The point of using Lorem of distribution it look like readable English “</p>
-            <img src="" alt="">
-          <div class="testimonials-right">
+            <img class="testimonials-quotes-bottom" src="images/details/quotes-1.svg" alt="quotes">
           </div>
         </div>
 
         <div class="testimonials-buttons">
-          <button class="testimonials-button-left"><img src="" alt=""></button>
-          <button class="testimonials-button-right"><img src="" alt=""></button>
+          <button class="testimonials-button-left"><img src="images/details/arrow-scroll.svg" alt="<"></button>
+          <button class="testimonials-button-right"><img src="images/details/arrow-scroll.svg" alt=">"></button>
         </div>
 
       </section>
 
       <section class="subscribe-section">
-        <img src="" alt="">
-        <div class="subscribe-text-box">
-          <h2 class="subscribe-title">Subscribe to newsletter</h2>
-          <p class="subscribe-text">Sign up for our newsletter to stay up-to-date on the latest promotions, discounts, and new features releases.</p>
-          <div class="subscribe-input-box">
-            <img src="" alt="">
-            <input type="email" class="subscribe-input" placeholder="Enter your email">
-            <button class="subscribe-button">Subscribe</button>
+        <div class="subscribe-background-overlay">
+          <img class="subscribe-png" src="images/pngs/image 10.png" alt="image">
+          <div class="subscribe-box">
+            <div class="subscribe-text-box">
+              <h2 class="subscribe-title">Subscribe to newsletter</h2>
+              <p class="subscribe-text">Sign up for our newsletter to stay up-to-date on the latest promotions, discounts, and new features releases.</p>
+            </div>
+            <div class="subscribe-input-box">
+              <img src="images/mini-icons/email 1.svg" alt="email-emoji">
+              <input type="email" class="subscribe-input" placeholder="Enter your email">
+              <button class="subscribe-button">Subscribe</button>
+            </div>
           </div>
         </div>
       </section>
@@ -239,18 +284,13 @@
     <footer>
       <div class="footer-content">
         <div class="footer-top">
-          <img src="" alt="">
-
-          <div class="footer-social-media">
-            <a href="#"><img src="" alt=""></a>
-            <a href="#"><img src="" alt=""></a>
-            <a href="#"><img src="" alt=""></a>
-            <a href="#"><img src="" alt=""></a>
+          <img src="images/logos/logo.svg" alt="logo">
+          <a href="#"><img src="images/logos/Icon.svg" alt="social media"></a>
         </div>
 
         <div class="footer-middle">
           <div class="footer-column">
-            <h3>Explore</h3>
+            <h4>Explore</h4>
             <a href="#">Home</a>
             <a href="#">About Us</a>
             <a href="#">Services</a>
@@ -259,17 +299,25 @@
           </div>
 
           <div class="footer-column">
-            <h3>Utility Pages</h3>
+            <h4>Utility Pages</h4>
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Use</a>
           </div>
 
           <div class="footer-column">
-            <h3>Keep in Touch</h3>
-            <p><span>Address:</span>Mariendalsvej 50D 2 2000 Frederiksberg.</p>
-            <p><span>Mail:</span>support@servicemarket.com</p>
-            <p><span>Phone:</span>(+22) 123 - 4567 - 900</p>
+            <h4>Keep in Touch</h4>
+            <div class="footer-contact-info">
+              <h5>Address:</h5><p>Mariendalsvej 50D 2 2000 Frederiksberg.</p>
+            </div>
+            <div class="footer-contact-info">
+              <h5>Mail:</h5><p>support@servicemarket.com</p>
+            </div>
+            <div class="footer-contact-info">
+              <h5>Phone:</h5><p>(+22) 123 - 4567 - 900</p>
+            </div>
+          </div>
         </div>
+      </div>
 
       <div class="footer-bottom">
         <p>© 2023, ServiceMarket.dk | All rights reserved.</p>
