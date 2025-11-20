@@ -39,6 +39,18 @@ footer {
   gap: 40px;
 }
 
+.subtitle {
+  color: rgba(186, 120, 148, 1);
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 155%;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
 
 .box-header {
   display: flex;
@@ -589,7 +601,7 @@ footer {
   line-height: 150%;
 }
 
-.testimonials-title {
+.testimonials-box-title {
   color: rgba(237, 255, 240, 1);
   font-family: 'Playfair Display', serif;
   font-size: 36px;
@@ -822,4 +834,534 @@ footer {
   font-weight: 400;
   line-height: 200%;
   letter-spacing: -0.18px;
+}
+
+.about-hero-section {
+  width: 100%;
+  background-color: rgba(66, 42, 60, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 150px 600px;
+  gap: 8px;
+}
+
+.about-hero-section h3 {
+  color: rgba(236, 191, 211, 1);
+}
+
+.about-hero-title {
+  color: rgba(247, 229, 193, 1);
+  text-align: center;
+  font-family: "Playfair Display";
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.55px;
+}
+
+.about-hero-button {
+  background-color: rgba(186, 120, 148, 1);
+  border: none;
+  color: rgba(255, 255, 255, 1);
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%;
+  padding: 24px 36px;
+  margin-top: 28px;
+  cursor: pointer;
+}
+
+.about-hero-button:active {
+  transform: scale(0.97);
+}
+
+.values-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 200px 650px;
+  gap: 10px;
+}
+
+.values-title {
+  color: rgba(20, 20, 20, 1);
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -0.45px;
+}
+
+.values-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px;
+}
+
+.values-cell {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 36px 0px;
+  gap: 32px;
+  border-bottom: 1px solid rgba(211, 211, 211, 1);
+}
+
+.values-cell-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 36px 0px;
+  gap: 32px;
+}
+
+.values-cell-text-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.values-cell-title {
+  color: rgba(20, 20, 20, 1);
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.values-cell-text {
+  color: rgba(85, 85, 85, 1);
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 175%;
+}
+
+.about-section {
+  width: 100%;
+  background-color: rgba(247, 229, 193, 0.5);
+  padding: 100px 400px;
+}
+
+.about-content {
+  background-color: rgba(66, 42, 60, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 74px 0px 74px 600px;
+  gap: 10px;
+}
+
+
+.about-image {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 70px;
+}
+
+.about-text-box {
+  width: 82%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.about-box-subtitle {
+  color: rgba(255, 255, 255, 1);
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 155%;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.about-title {
+  color: rgba(255, 255, 255, 1);
+  font-family: "Playfair Display", serif;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -0.45px;
+}
+
+.about-text {
+  color: rgba(255, 255, 255, 1);
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 175%;
+}
+
+.includes-section {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 200px 0px 120px 100px;
+  gap: 320px;
+}
+
+.includes-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 35px;
+}
+
+.includes-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.includes-title {
+  color: rgba(66, 42, 60, 1);
+  font-family: 'Playfair Display', serif;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -0.45px;
+}
+
+.includes-text {
+  color: rgba(85, 85, 85, 1);
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 175%;
+  margin-top: 6px;
+}
+
+.includes-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.includes-bottom-title {
+  color: rgba(20, 20, 20, 1);
+  font-family: "Playfair Display";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -0.22px;
+}
+
+.includes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.includes-cell {
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.includes-cell-text-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.includes-cell-title {
+  color: rgba(20, 20, 20, 1);
+  font-family: 'Manrope', sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 200%;
+}
+
+.includes-cell-text {
+  color: rgba(85, 85, 85, 1);
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 175%;
+}
+
+.contact-hero-section {
+  width: 100%;
+  background-color: rgba(66, 42, 60, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 150px 650px;
+  gap: 8px;
+}
+
+.contact-hero-subtitle {
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 155%;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.contact-hero-title {
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.55px;
+}
+
+.salon-info-section {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 150px 300px;
+  gap: 120px;
+}
+
+.salon-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 45px;
+}
+
+.salon-text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.salon-subtitle {
+  color: rgba(66, 42, 60, 1);
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 155%;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.salon-title {
+  width: 70%;
+  color: rgba(20, 20, 20, 1);
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -0.45px;
+}
+
+.salon-text {
+  width: 85%;
+  color: rgba(20, 20, 20, 1);
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 175%;
+  margin-top: 15px;
+}
+
+.salon-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.salon-contact-cell {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 27px;
+}
+
+.salon-contact-text-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.salon-contact-title {
+  color: rgba(20, 20, 20, 1);
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%;
+}
+
+.salon-contact-text {
+  color: rgba(20, 20, 20, 1);
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  letter-spacing: 0.96px;
+  text-transform: uppercase;
+}
+
+.schedule-section {
+  width: 100%;
+  background-color: rgba(247, 229, 193, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 150px 400px;
+  gap: 40px;
+}
+
+.schedule-text-box {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2px;
+}
+
+.schedule-title {
+  color: rgba(66, 42, 60, 1);
+  text-align: center;
+  font-family: "Playfair Display";
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -0.45px;
+}
+
+.schedule-text {
+  color: rgba(85, 85, 85, 1);
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 175%;
+  margin-top: 18px;
+}
+
+.schedule-form-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 20px;
+  box-shadow: 0px 34px 50px rgba(68, 46, 26, 0.12);
+  padding: 100px;
+  gap: 15px;
+}
+
+.schedule-input-box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid rgba(85, 85, 85, 1);
+  border-radius: 5px;
+  padding-left: 15px;
+  gap: 15px;
+}
+
+.schedule-input {
+  width: 100%;
+  border: none;
+  color: rgba(85, 85, 85, 1);
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  letter-spacing: -0.19px;
+  padding: 14px 0px;
+  outline: none;
+}
+
+.schedule-textarea {
+  width: 100%;
+  height: 120px;
+  align-self: flex-start;
+  border: none;
+  color: rgba(85, 85, 85, 1);
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  letter-spacing: -0.19px;
+  padding: 14px 0px;
+  outline: none;
+  resize: none;
+}
+
+.schedule-textarea-icon {
+  align-self: flex-start;
+  margin-top: 20px;
+}
+
+.schedule-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: rgba(66, 42, 60, 1);
+  border: none;
+  border-radius: 5px;
+  padding: 25px 0px;
+  color: #FFF;
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 125%;
+  letter-spacing: 1.68px;
+  text-transform: uppercase;
+}
+
+.exit-left {
+  transform: translateX(-100%) !important;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.exit-right {
+  transform: translateX(100%) !important;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
 }

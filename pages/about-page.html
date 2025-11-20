@@ -10,49 +10,65 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    </head>
+  </head>
   <body>
 
     <header>
-      <img src="images/logos/main-logo.svg" alt="Logo">
+      <img src="../images/logos/main-logo.svg" alt="Logo">
       <div class="box-header">
         <div class="left-header">
           <a href="../index.html">Home</a>
           <a href="about-page.html">About Us</a>
           <a href="contact-page.html">Contact Us</a>
-          <button class="language-button"><span class="language-container js-language-container"></span><img src=""></button>
         </div>
+
+        <button class="language-button"><span class="language-container js-language-container">EN</span><img src="../images/details/arrow-header.svg" alt="Arrow"></button>
+          
+        <div class="list-language">
+          <button>EN</button>
+          <button>UA</button>
+        </div>
+
         <div class="right-header">
           <button class="login-button">Login</button>
           <button class="signup-button">Signup</button>
         </div>
+
       </div>
     </header>
 
     <main>
-      <section class="hero-section">
-        <span class="subtitle">SHORT STORY ABOUT US</span>
-        <h1 class="hero-title">The big story behind, our beautyness center</h1>
-        <button class="hero-button">CONTACT US</button>
+      <section class="about-hero-section">
+        <h3 class="subtitle">SHORT STORY ABOUT US</h3>
+        <h1 class="about-hero-title">The big story behind, our beautyness center</h1>
+        <button class="about-hero-button">CONTACT US</button>
       </section>
 
       <section class="values-section">
-        <span class="subtitle">Our Values</span>
+        <h3 class="subtitle">Our Values</h3>
         <h2 class="values-title">The work values we thrive for</h2>
         <div class="values-content">
           <div class="values-cell">
-            <img src="" alt="">
+            <img src="../images/procedures/Icon.svg" alt="procedure">
             <div class="values-cell-text-box">
-              <h3 class="values-cell-title">Professionalism</h3>
-              <p class="values-cell-text">Lorem ipsum dolor sit amet consectetur. Eu quis enim tempor et proin neque.</p>
+              <h3 class="values-cell-title">Beauty Experts</h3>
+              <p class="values-cell-text">The majority have suffered alteration in some form, buying to injected humour, or randomised words which desktop publishing packages.</p>
             </div>
           </div>
 
           <div class="values-cell">
-            <img src="" alt="">
+            <img src="../images/procedures/Icon-1.svg" alt="procedure">
             <div class="values-cell-text-box">
-              <h3 class="values-cell-title">Quality Service</h3>
-              <p class="values-cell-text">Lorem ipsum dolor sit amet consectetur. Eu quis enim tempor et proin neque.</p>
+              <h3 class="values-cell-title">Great Services</h3>
+              <p class="values-cell-text">The majority have suffered alteration in some form, buying to injected humour, or randomised words which desktop publishing packages.</p>
+            </div>
+          </div>
+
+          <div class="values-cell-bottom">
+            <img src="../images/procedures/Icon-2.svg" alt="procedure">
+            <div class="values-cell-text-box">
+              <h3 class="values-cell-title">100% Genuine</h3>
+              <p class="values-cell-text">The majority have suffered alteration in some form, buying to injected humour, or randomised words which desktop publishing packages.</p>
             </div>
           </div>
         </div>
@@ -60,14 +76,10 @@
 
       <section class="about-section">
           <div class="about-content">
-            <div class="about-image-box">
-              <img src="" alt="">
-            </div>
-            <div class="about-text-box">
-              <span class="about-subtitle">ABOUT US</span>
-              <h2 class="about-title">It's the bridge between service companies and consumers.</h2>
-              <p class="about-text">ServiceMarket.dk is a Copenhagen-based technology company known for our overview platform. Our aim is to simplify and improve everyday life for citizens in Denmark. One platform that brings together all services in an easy and controlled environment.</p>
-            </div>
+            <img class="about-image" src="../images/pngs/Group35267.png" alt="about-image">
+            <h3 class="about-box-subtitle">ABOUT US</h3>
+            <h2 class="about-title">It's the bridge between service companies and consumers.</h2>
+            <p class="about-text">ServiceMarket.dk is a Copenhagen-based technology company known for our overview platform. Our aim is to simplify and improve everyday life for citizens in Denmark. One platform that brings together all services in an easy and controlled environment.</p>
           </div>
       </section>
 
@@ -75,7 +87,7 @@
         <div class="includes-content">
 
           <div class="includes-top">
-            <span class="subtitle">WHAT INCLUDES?</span>
+            <h3 class="subtitle">WHAT INCLUDES?</h3>
             <h2 class="includes-title">The start of the journey</h2>
             <p class="includes-text">ServiceMarket.dk was founded in 2021 by two young entrepreneurs who saw a problem with the fragmented service industry in Denmark. There were thousands of small businesses offering services, but it was difficult for consumers to find them and know which ones to choose. They developed the idea of creating a platform that would bring all these service providers together in one place, making it easier for consumers to find what they need and get their issues resolved quickly and easily. Without having to go to many different websites, each with their own booking system.</p>
           </div>
@@ -85,7 +97,7 @@
             <div class="includes-list">
 
               <div class="includes-cell">
-                <img src="" alt="">
+                <img src="../images/details/check-mark.svg" alt="check-mark">
                 <div class="includes-cell-text-box">
                   <h4 class="includes-cell-title">The Assessment Stage</h4>
                   <p class="includes-cell-text">The point of using Lorem Ipsum is that it has a more-or-less normal letters.</p>
@@ -93,7 +105,7 @@
               </div>
 
               <div class="includes-cell">
-                <img src="" alt="">
+                <img src="../images/details/check-mark.svg" alt="check-mark">
                 <div class="includes-cell-text-box">
                   <h4 class="includes-cell-title">The Initialisation Stage</h4>
                   <p class="includes-cell-text">The point of using Lorem Ipsum is that it has a more-or-less normal letters.</p>
@@ -101,7 +113,7 @@
               </div>
 
               <div class="includes-cell">
-                <img src="" alt="">
+                <img src="../images/details/check-mark.svg" alt="check-mark">
                 <div class="includes-cell-text-box">
                   <h4 class="includes-cell-title">The Treatment Stage</h4>
                   <p class="includes-cell-text">The point of using Lorem Ipsum is that it has a more-or-less normal letters.</p>
@@ -111,28 +123,29 @@
             </div>
           </div>
         </div>
+        <img class="includes-decorative-image" src="../images/pngs/Background2.png" alt="decorative-image">
       </section>
 
       <section class="testimonials-section">
-        <span class="subtitle">Testimonials</span>
-        <h2>What our Customers says...</h2>
+        <div class="testimonials-text-box">
+          <h3 class="subtitle">Testimonials</h3>
+          <h2 class="testimonials-title">What our Customers says...</h2>
+        </div>
 
         <div class="testimonials-content">
-          <div class="testimonials-left">
-            <img src="" alt="">
-          </div>
-            <img src="" alt="">
-            <p class="testimonials-self-information">Leslie Alexander<br>Moncton, Canada</p>
-            <h3 class="testimonials-title">Neque porro quisquam est qui dolum</h3>
-            <p class="testimonials-text">“ It is a long established fact that a reader will be tracked distracted by the readable content of a page is when looking at its layout. The point of using Lorem of distribution it look like readable English “</p>
-            <img src="" alt="">
+          <img src="../images/pngs/Contents.png" alt="image">
           <div class="testimonials-right">
+            <img class="testimonials-quotes-top" src="../images/details/quotes-2.svg" alt="quotes">
+            <p class="testimonials-self-information">Leslie Alexander<br><span class="testimonials-self-city">Moncton, Canada</span></p>
+            <h3 class="testimonials-box-title">Neque porro quisquam est qui dolum</h3>
+            <p class="testimonials-text">“It is a long established fact that a reader will be tracked distracted by the readable content of a page is when looking at its layout. The point of using Lorem of distribution it look like readable English “</p>
+            <img class="testimonials-quotes-bottom" src="../images/details/quotes-1.svg" alt="quotes">
           </div>
         </div>
 
         <div class="testimonials-buttons">
-          <button class="testimonials-button-left"><img src="" alt=""></button>
-          <button class="testimonials-button-right"><img src="" alt=""></button>
+          <button class="testimonials-button-left"><img src="../images/details/arrow-scroll.svg" alt="<"></button>
+          <button class="testimonials-button-right"><img src="../images/details/arrow-scroll.svg" alt=">"></button>
         </div>
 
       </section>
@@ -141,18 +154,13 @@
     <footer>
       <div class="footer-content">
         <div class="footer-top">
-          <img src="" alt="">
-
-          <div class="footer-social-media">
-            <a href="#"><img src="" alt=""></a>
-            <a href="#"><img src="" alt=""></a>
-            <a href="#"><img src="" alt=""></a>
-            <a href="#"><img src="" alt=""></a>
+          <img src="../images/logos/logo.svg" alt="logo">
+          <a href="#"><img src="../images/logos/Icon.svg" alt="social media"></a>
         </div>
 
         <div class="footer-middle">
           <div class="footer-column">
-            <h3>Explore</h3>
+            <h4>Explore</h4>
             <a href="#">Home</a>
             <a href="#">About Us</a>
             <a href="#">Services</a>
@@ -161,23 +169,31 @@
           </div>
 
           <div class="footer-column">
-            <h3>Utility Pages</h3>
+            <h4>Utility Pages</h4>
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Use</a>
           </div>
 
           <div class="footer-column">
-            <h3>Keep in Touch</h3>
-            <p><span>Address:</span>Mariendalsvej 50D 2 2000 Frederiksberg.</p>
-            <p><span>Mail:</span>support@servicemarket.com</p>
-            <p><span>Phone:</span>(+22) 123 - 4567 - 900</p>
+            <h4>Keep in Touch</h4>
+            <div class="footer-contact-info">
+              <h5>Address:</h5><p>Mariendalsvej 50D 2 2000 Frederiksberg.</p>
+            </div>
+            <div class="footer-contact-info">
+              <h5>Mail:</h5><p>support@servicemarket.com</p>
+            </div>
+            <div class="footer-contact-info">
+              <h5>Phone:</h5><p>(+22) 123 - 4567 - 900</p>
+            </div>
+          </div>
         </div>
+      </div>
 
       <div class="footer-bottom">
         <p>© 2023, ServiceMarket.dk | All rights reserved.</p>
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
   </body>
 </html>
