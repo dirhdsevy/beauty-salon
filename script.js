@@ -1,123 +1,219 @@
-class InfiniteScroller {
+class CircularScroller {
   constructor(options) {
-    this.container = document.querySelector(options.containerSelector);
+    this.track = document.querySelector(options.trackSelector);
     this.leftButton = document.querySelector(options.leftButtonSelector);
     this.rightButton = document.querySelector(options.rightButtonSelector);
-    this.cellSelector = options.cellSelector;
     
-    this.cells = Array.from(this.container.querySelectorAll(this.cellSelector));
-    this.isAnimating = false;
+    if (!this.track || !this.leftButton || !this.rightButton) {
+      console.error('CircularScroller: Не знайдено елементи для:', options);
+      return;
+    }
+    
+    this.cells = Array.from(this.track.children);
     this.currentIndex = 0;
     this.visibleCount = options.visibleCount;
     this.totalCells = this.cells.length;
+    this.isAnimating = false;
+    this.needsReset = false;
+    this.resetDirection = null;
     
-    this.cellWidth = this.calculateCellWidth();
     this.init();
-  }
-  
-  calculateCellWidth() {
-    if (this.cells.length > 0) {
-      const firstCell = this.cells[0];
-      const style = window.getComputedStyle(firstCell);
-      const margin = parseInt(style.marginLeft) + parseInt(style.marginRight);
-      return firstCell.offsetWidth + margin;
-    }
-    return 100;
   }
   
   init() {
     this.bindEvents();
-    this.updateContainerPosition();
+    this.track.addEventListener('transitionend', () => {
+      if (this.needsReset) {
+        this.performReset();
+      }
+      this.isAnimating = false;
+      this.updateButtonStates();
+    });
+    
+    // Ініціалізація стану кнопок
+    this.updateButtonStates();
   }
   
   bindEvents() {
     this.rightButton.addEventListener('click', () => {
+      if (this.isAnimating) return;
       this.scrollRight();
     });
     
     this.leftButton.addEventListener('click', () => {
+      if (this.isAnimating) return;
       this.scrollLeft();
-    });
-    
-    window.addEventListener('resize', () => {
-      this.cellWidth = this.calculateCellWidth();
-      this.updateContainerPosition();
     });
   }
   
   scrollRight() {
-    if (this.isAnimating) return;
     this.isAnimating = true;
     
     this.currentIndex++;
+    this.updatePosition();
     
     if (this.currentIndex > this.totalCells - this.visibleCount) {
-      setTimeout(() => {
-        this.currentIndex = 0;
-        this.updateContainerPosition(false);
-        this.isAnimating = false;
-      }, 500);
+      this.needsReset = true;
+      this.resetDirection = 'right';
     }
-    
-    this.updateContainerPosition(true);
-    
-    setTimeout(() => {
-      if (this.currentIndex <= this.totalCells - this.visibleCount) {
-        this.isAnimating = false;
-      }
-    }, 500);
   }
   
   scrollLeft() {
-    if (this.isAnimating) return;
     this.isAnimating = true;
     
     this.currentIndex--;
+    this.updatePosition();
     
     if (this.currentIndex < 0) {
-      setTimeout(() => {
-        this.currentIndex = this.totalCells - this.visibleCount;
-        this.updateContainerPosition(false);
-        this.isAnimating = false;
-      }, 500);
+      this.needsReset = true;
+      this.resetDirection = 'left';
     }
-    
-    this.updateContainerPosition(true);
-    
-    setTimeout(() => {
-      if (this.currentIndex >= 0) {
-        this.isAnimating = false;
-      }
-    }, 500);
   }
   
-  updateContainerPosition(animate = true) {
-    const translateX = -this.currentIndex * this.cellWidth;
+  performReset() {
+    this.track.style.transition = 'none';
     
-    if (animate) {
-      this.container.style.transition = 'transform 0.5s ease-in-out';
+    if (this.resetDirection === 'right') {
+      this.currentIndex = 1;
     } else {
-      this.container.style.transition = 'none';
+      this.currentIndex = this.totalCells - this.visibleCount - 1;
     }
     
-    this.container.style.transform = `translateX(${translateX}px)`;
+    this.updatePosition();
+    
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        this.track.style.transition = 'transform 0.5s ease-in-out';
+        this.needsReset = false;
+        this.resetDirection = null;
+      });
+    });
+  }
+  
+  updatePosition() {
+    const cellWidth = this.cells[0].offsetWidth + 
+                     parseInt(getComputedStyle(this.track).gap);
+    const translateX = -this.currentIndex * cellWidth;
+    this.track.style.transform = `translateX(${translateX}px)`;
+  }
+  
+  updateButtonStates() {
+    // Для нескінченного скролу завжди активні обидві кнопки
+    this.leftButton.disabled = false;
+    this.rightButton.disabled = false;
+    this.leftButton.style.opacity = '1';
+    this.rightButton.style.opacity = '1';
+  }
+}
+
+class LinearScroller {
+  constructor(options) {
+    this.track = document.querySelector(options.trackSelector);
+    this.leftButton = document.querySelector(options.leftButtonSelector);
+    this.rightButton = document.querySelector(options.rightButtonSelector);
+    
+    if (!this.track || !this.leftButton || !this.rightButton) {
+      console.error('LinearScroller: Не знайдено елементи для:', options);
+      return;
+    }
+    
+    this.cells = Array.from(this.track.children);
+    this.currentIndex = 0;
+    this.visibleCount = options.visibleCount;
+    this.totalCells = this.cells.length;
+    this.isAnimating = false;
+    
+    this.init();
+  }
+  
+  init() {
+    this.bindEvents();
+    this.track.addEventListener('transitionend', () => {
+      this.isAnimating = false;
+      this.updateButtonStates();
+    });
+    
+    // Ініціалізація стану кнопок
+    this.updateButtonStates();
+  }
+  
+  bindEvents() {
+    this.rightButton.addEventListener('click', () => {
+      if (this.isAnimating) return;
+      this.scrollRight();
+    });
+    
+    this.leftButton.addEventListener('click', () => {
+      if (this.isAnimating) return;
+      this.scrollLeft();
+    });
+  }
+  
+  scrollRight() {
+    if (this.currentIndex >= this.totalCells - this.visibleCount) return;
+    
+    this.isAnimating = true;
+    this.currentIndex++;
+    this.updatePosition();
+  }
+  
+  scrollLeft() {
+    if (this.currentIndex <= 0) return;
+    
+    this.isAnimating = true;
+    this.currentIndex--;
+    this.updatePosition();
+  }
+  
+  updatePosition() {
+    const cellWidth = this.cells[0].offsetWidth;
+    const translateX = -this.currentIndex * cellWidth;
+    this.track.style.transform = `translateX(${translateX}px)`;
+  }
+  
+  updateButtonStates() {
+    // Блокуємо ліву кнопку, якщо ми на початку
+    if (this.currentIndex <= 0) {
+      this.leftButton.disabled = true;
+      this.leftButton.style.opacity = '0.5';
+    } else {
+      this.leftButton.disabled = false;
+      this.leftButton.style.opacity = '1';
+    }
+    
+    // Блокуємо праву кнопку, якщо ми в кінці
+    if (this.currentIndex >= this.totalCells - this.visibleCount) {
+      this.rightButton.disabled = true;
+      this.rightButton.style.opacity = '0.5';
+    } else {
+      this.rightButton.disabled = false;
+      this.rightButton.style.opacity = '1';
+    }
   }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  new InfiniteScroller({
-    containerSelector: '.procedures-scroll-section .scroll-middle',
-    leftButtonSelector: '.procedures-scroll-section .js-procedures-arrow-left',
-    rightButtonSelector: '.procedures-scroll-section .js-procedures-arrow-right',
-    cellSelector: '.procedures-scroll-cell',
+  // Procedures - нескінченний скрол
+  new CircularScroller({
+    trackSelector: '.js-procedures-track',
+    leftButtonSelector: '.js-procedures-arrow-left',
+    rightButtonSelector: '.js-procedures-arrow-right',
     visibleCount: 6
   });
   
-  new InfiniteScroller({
-    containerSelector: '.services-scroll',
-    leftButtonSelector: '.services-section .scroll-button-left',
-    rightButtonSelector: '.services-section .scroll-button-right',
-    cellSelector: '.services-scroll-cell',
+  // Services - нескінченний скрол
+  new CircularScroller({
+    trackSelector: '.js-services-track',
+    leftButtonSelector: '.js-services-arrow-left',
+    rightButtonSelector: '.js-services-arrow-right',
     visibleCount: 4
+  });
+
+  // Testimonials - лінійний скрол з блокуванням кнопок
+  new LinearScroller({
+    trackSelector: '.js-testimonials-track',
+    leftButtonSelector: '.js-testimonials-arrow-left',
+    rightButtonSelector: '.js-testimonials-arrow-right',
+    visibleCount: 1
   });
 });

@@ -629,12 +629,13 @@ footer {
 }
 
 .testimonials-button-left, .testimonials-button-right {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(66, 42, 60, 1);
   display: flex;
   align-items: center;
   border: none;
   border-radius: 120px;
   padding: 13px 19px;
+  cursor: pointer;
 }
 
 .testimonials-button-left{
@@ -1354,14 +1355,82 @@ footer {
   text-transform: uppercase;
 }
 
-.exit-left {
-  transform: translateX(-100%) !important;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
+.procedures-scroll-section .scroll-viewport {
+  width: 1675px;
+  margin: 0 auto;
 }
 
-.exit-right {
-  transform: translateX(100%) !important;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
+.procedures-scroll-section .scroll-track {
+  gap: 160px;
+}
+
+.services-scroll .scroll-viewport {
+  width: 1625px;
+  margin: 0 auto;
+}
+
+.scroll-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.scroll-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.procedures-scroll-cell {
+  flex: 0 0 150px;
+}
+
+.services-scroll .scroll-track {
+  gap: 24px;
+}
+
+.services-scroll-cell {
+  flex: 0 0 300px;
+}
+
+.scroll-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+
+.scroll-button-left {
+  transform: rotate(180deg);
+}
+
+.testimonials-button-left:disabled,
+.testimonials-button-right:disabled {
+  cursor: default;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.testimonials-scroll-container {
+  width: 100%;
+}
+
+.testimonials-scroll-container .scroll-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.testimonials-scroll-container .scroll-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.testimonials-content {
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(66, 42, 60, 1);
+  border-radius: 40px;
+  gap: 65px;
+  padding: 95px 0px;
 }
