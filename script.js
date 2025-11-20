@@ -30,7 +30,6 @@ class CircularScroller {
       this.updateButtonStates();
     });
     
-    // Ініціалізація стану кнопок
     this.updateButtonStates();
   }
   
@@ -98,7 +97,6 @@ class CircularScroller {
   }
   
   updateButtonStates() {
-    // Для нескінченного скролу завжди активні обидві кнопки
     this.leftButton.disabled = false;
     this.rightButton.disabled = false;
     this.leftButton.style.opacity = '1';
@@ -133,7 +131,6 @@ class LinearScroller {
       this.updateButtonStates();
     });
     
-    // Ініціалізація стану кнопок
     this.updateButtonStates();
   }
   
@@ -172,7 +169,6 @@ class LinearScroller {
   }
   
   updateButtonStates() {
-    // Блокуємо ліву кнопку, якщо ми на початку
     if (this.currentIndex <= 0) {
       this.leftButton.disabled = true;
       this.leftButton.style.opacity = '0.5';
@@ -181,7 +177,6 @@ class LinearScroller {
       this.leftButton.style.opacity = '1';
     }
     
-    // Блокуємо праву кнопку, якщо ми в кінці
     if (this.currentIndex >= this.totalCells - this.visibleCount) {
       this.rightButton.disabled = true;
       this.rightButton.style.opacity = '0.5';
@@ -193,7 +188,6 @@ class LinearScroller {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Procedures - нескінченний скрол
   new CircularScroller({
     trackSelector: '.js-procedures-track',
     leftButtonSelector: '.js-procedures-arrow-left',
@@ -201,7 +195,6 @@ document.addEventListener('DOMContentLoaded', function() {
     visibleCount: 6
   });
   
-  // Services - нескінченний скрол
   new CircularScroller({
     trackSelector: '.js-services-track',
     leftButtonSelector: '.js-services-arrow-left',
@@ -209,7 +202,6 @@ document.addEventListener('DOMContentLoaded', function() {
     visibleCount: 4
   });
 
-  // Testimonials - лінійний скрол з блокуванням кнопок
   new LinearScroller({
     trackSelector: '.js-testimonials-track',
     leftButtonSelector: '.js-testimonials-arrow-left',

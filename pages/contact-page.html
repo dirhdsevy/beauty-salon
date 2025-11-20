@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
       <meta charset="UTF-8">
@@ -88,35 +87,56 @@
           <p class="schedule-text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
         </div>
 
-        <div class="schedule-form-box">
-
-          <div class="schedule-input-box">
-            <img src="../images/mini-icons/user.svg" alt="image">
-            <input type="text" class="schedule-input" placeholder="Name">
+        <form class="schedule-form-box" id="contact-form">
+          <div class="form-group">
+            <div class="schedule-input-box">
+              <img src="../images/mini-icons/user.svg" alt="image">
+              <input type="text" class="schedule-input" id="name" name="name" placeholder="Name" required>
+            </div>
+            <span class="error-message" id="name-error"></span>
           </div>
 
-          <div class="schedule-input-box">
-            <img src="../images/mini-icons/mail.svg" alt="image">
-            <input type="email" class="schedule-input" placeholder="Email">
+          <div class="form-group">
+            <div class="schedule-input-box">
+              <img src="../images/mini-icons/mail.svg" alt="image">
+              <input type="email" class="schedule-input" id="email" name="email" placeholder="Email" required>
+            </div>
+            <span class="error-message" id="email-error"></span>
           </div>
 
-          <div class="schedule-input-box">
-            <img src="../images/mini-icons/phone.svg" alt="image">
-            <input type="tel" class="schedule-input" placeholder="Phone">
+          <div class="form-group">
+            <div class="schedule-input-box">
+              <img src="../images/mini-icons/phone.svg" alt="image">
+              <input type="tel" class="schedule-input" id="phone" name="phone" placeholder="Phone" required>
+            </div>
+            <span class="error-message" id="phone-error"></span>
           </div>
 
-          <div class="schedule-input-box">
-            <img src="../images/mini-icons/book-open.svg" alt="image">
-            <input type="text" class="schedule-input" placeholder="Service You Need">
+          <div class="form-group">
+            <div class="schedule-input-box">
+              <img src="../images/mini-icons/book-open.svg" alt="image">
+              <input type="text" class="schedule-input" id="service" name="service" placeholder="Service You Need" required>
+            </div>
+            <span class="error-message" id="service-error"></span>
           </div>
 
-          <div class="schedule-input-box">
-            <img class="schedule-textarea-icon" src="../images/mini-icons/edit.svg" alt="image">
-            <textarea class="schedule-textarea" placeholder="Any Note For Us"></textarea>
+          <div class="form-group">
+            <div class="schedule-input-box">
+              <img class="schedule-textarea-icon" src="../images/mini-icons/edit.svg" alt="image">
+              <textarea class="schedule-textarea" id="note" name="note" placeholder="Any Note For Us"></textarea>
+            </div>
+            <span class="error-message" id="note-error"></span>
           </div>
 
-          <button class="schedule-button">SUBMIT</button>
-        </div>
+          <button type="submit" class="schedule-button" id="submit-btn">
+            <span id="submit-text">SUBMIT</span>
+            <div id="loading-spinner" class="loading-spinner" style="display: none;">
+              <div class="spinner"></div>
+            </div>
+          </button>
+          
+          <div id="form-message" class="form-message"></div>
+        </form>
       </section>
     </main>
 
@@ -163,6 +183,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="../contact-form.js"></script>
   </body>
 </html>

@@ -1287,6 +1287,11 @@ footer {
   gap: 15px;
 }
 
+.form-group {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 .schedule-input-box {
   width: 100%;
   display: flex;
@@ -1297,6 +1302,12 @@ footer {
   border-radius: 5px;
   padding-left: 15px;
   gap: 15px;
+  transition: border-color 0.3s ease;
+}
+
+.schedule-input-box.error {
+  border-color: #ff4444;
+  background-color: rgba(255, 68, 68, 0.05);
 }
 
 .schedule-input {
@@ -1311,6 +1322,7 @@ footer {
   letter-spacing: -0.19px;
   padding: 14px 0px;
   outline: none;
+  background: transparent;
 }
 
 .schedule-textarea {
@@ -1328,6 +1340,7 @@ footer {
   padding: 14px 0px;
   outline: none;
   resize: none;
+  background: transparent;
 }
 
 .schedule-textarea-icon {
@@ -1335,11 +1348,21 @@ footer {
   margin-top: 20px;
 }
 
+.error-message {
+  color: #ff4444;
+  font-size: 14px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  margin-top: 8px;
+  display: block;
+  padding-left: 10px;
+}
+
 .schedule-button {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   background-color: rgba(66, 42, 60, 1);
   border: none;
   border-radius: 5px;
@@ -1353,6 +1376,75 @@ footer {
   line-height: 125%;
   letter-spacing: 1.68px;
   text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  gap: 10px;
+}
+
+.schedule-button:hover:not(:disabled) {
+  background-color: rgba(86, 62, 80, 1);
+  transform: translateY(-2px);
+}
+
+.schedule-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.schedule-button:disabled {
+  background-color: rgba(170, 170, 170, 1);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loading-spinner {
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ffffff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.form-message {
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.form-message.success {
+  background-color: rgba(212, 237, 218, 0.9);
+  color: #155724;
+  border: 1px solid rgba(195, 230, 203, 0.8);
+}
+
+.form-message.error {
+  background-color: rgba(248, 215, 218, 0.9);
+  color: #721c24;
+  border: 1px solid rgba(245, 198, 203, 0.8);
+}
+
+.schedule-input:focus,
+.schedule-textarea:focus {
+  color: rgba(66, 42, 60, 1);
+}
+
+.schedule-input-box:focus-within:not(.error) {
+  border-color: rgba(66, 42, 60, 1);
+  box-shadow: 0 0 0 2px rgba(66, 42, 60, 0.1);
 }
 
 .procedures-scroll-section .scroll-viewport {
