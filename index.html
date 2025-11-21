@@ -426,11 +426,17 @@
               <h2 class="subscribe-title">Subscribe to newsletter</h2>
               <p class="subscribe-text">Sign up for our newsletter to stay up-to-date on the latest promotions, discounts, and new features releases.</p>
             </div>
-            <div class="subscribe-input-box">
+            <form id="newsletter-form" class="subscribe-input-box">
               <img src="images/mini-icons/email 1.svg" alt="email-emoji">
-              <input type="email" class="subscribe-input" placeholder="Enter your email">
-              <button class="subscribe-button">Subscribe</button>
-            </div>
+              <input type="email" class="subscribe-input" id="newsletter-email" placeholder="Enter your email" required>
+              <button type="submit" class="subscribe-button" id="subscribe-btn">
+                <span id="subscribe-text">Subscribe</span>
+                <div id="subscribe-loading" class="loading-spinner">
+                  <div class="spinner"></div>
+                </div>
+              </button>
+            </form>
+            <div id="newsletter-message" class="form-message"></div>
           </div>
         </div>
       </section>
@@ -480,5 +486,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="email-service.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   </body>
 </html>

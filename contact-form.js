@@ -6,15 +6,19 @@ class ContactForm {
         this.loadingSpinner = document.getElementById('loading-spinner');
         this.formMessage = document.getElementById('form-message');
         
-        this.botToken = '---';
-        this.chatId = '---';
+        this.botToken = '8534057216:AAFyO-bEKw7TkocyGdxIrHZR3JjF-2B67ps';
+        this.chatId = '2068847552';
         
         this.init();
     }
     
     init() {
-        this.form.addEventListener('submit', (e) => this.handleSubmit(e));
-        this.setupRealTimeValidation();
+        if (this.form) {
+            this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+            this.setupRealTimeValidation();
+        } else {
+            console.error('Форма не знайдена!');
+        }
     }
     
     setupRealTimeValidation() {
@@ -42,17 +46,17 @@ class ContactForm {
             case 'name':
                 if (!value) {
                     isValid = false;
-                    errorMessage = 'Ім\'я обов\'язкове для заповнення';
+                    errorMessage = "Ім'я обов'язкове для заповнення";
                 } else if (value.length < 2) {
                     isValid = false;
-                    errorMessage = 'Ім\'я повинно містити мінімум 2 символи';
+                    errorMessage = "Ім'я повинно містити мінімум 2 символи";
                 }
                 break;
                 
             case 'email':
                 if (!value) {
                     isValid = false;
-                    errorMessage = 'Email обов\'язковий для заповнення';
+                    errorMessage = "Email обов'язковий для заповнення";
                 } else if (!this.isValidEmail(value)) {
                     isValid = false;
                     errorMessage = 'Введіть коректний email';
@@ -62,7 +66,7 @@ class ContactForm {
             case 'phone':
                 if (!value) {
                     isValid = false;
-                    errorMessage = 'Телефон обов\'язковий для заповнення';
+                    errorMessage = "Телефон обов'язковий для заповнення";
                 } else if (!this.isValidPhone(value)) {
                     isValid = false;
                     errorMessage = 'Введіть коректний номер телефону';
@@ -72,7 +76,7 @@ class ContactForm {
             case 'service':
                 if (!value) {
                     isValid = false;
-                    errorMessage = 'Послуга обов\'язкова для заповнення';
+                    errorMessage = "Послуга обов'язкова для заповнення";
                 }
                 break;
         }
@@ -165,24 +169,26 @@ class ContactForm {
         });
         
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            const errorData = await response.text();
+            throw new Error(`HTTP error! status: ${response.status}, message: ${errorData}`);
         }
         
         return await response.json();
     }
     
     formatMessage(data) {
-        return `
-<b>🔄 Нова заявка з форми зворотного зв'язку</b>
+        const date = new Date().toLocaleString('uk-UA');
+        let message = '🔄 Нова заявка з форми зворотного зв\'язку\n\n';
+        message += `👤 Ім'я: ${data.name}\n`;
+        message += `📧 Email: ${data.email}\n`;
+        message += `📞 Телефон: ${data.phone}\n`;
+        message += `💇 Послуга: ${data.service}\n`;
+        if (data.note) {
+            message += `📝 Нотатка: ${data.note}\n`;
+        }
+        message += `⏰ Дата: ${date}`;
 
-<b>👤 Ім'я:</b> ${data.name}
-<b>📧 Email:</b> ${data.email}
-<b>📞 Телефон:</b> ${data.phone}
-<b>💇 Послуга:</b> ${data.service}
-<b>📝 Нотатка:</b> ${data.note || 'Не вказано'}
-
-<b>⏰ Час:</b> ${new Date().toLocaleString('uk-UA')}
-        `.trim();
+        return message;
     }
     
     setLoading(isLoading) {
@@ -198,13 +204,15 @@ class ContactForm {
     }
     
     showMessage(message, type) {
-        this.formMessage.textContent = message;
-        this.formMessage.className = `form-message ${type}`;
-        this.formMessage.style.display = 'block';
-        
-        setTimeout(() => {
-            this.formMessage.style.display = 'none';
-        }, 5000);
+        if (this.formMessage) {
+            this.formMessage.textContent = message;
+            this.formMessage.className = `form-message ${type}`;
+            this.formMessage.style.display = 'block';
+            
+            setTimeout(() => {
+                this.formMessage.style.display = 'none';
+            }, 5000);
+        }
     }
 }
 
