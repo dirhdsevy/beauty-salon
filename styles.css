@@ -109,15 +109,8 @@ footer {
 
 .hero-section {
   width: 100%;
-  background: linear-gradient(
-    to right, 
-    rgba(66, 42, 60, 1) 0%,
-    rgba(66, 42, 60, 1) 35%,
-    rgba(66, 42, 60, 0.8) 45%,
-    rgba(66, 42, 60, 0) 50%
-    ),
-    url('./images/pngs/Rectangl-3.png') no-repeat right center;
-  background-size: auto 100%;
+  background-image: url('./images/pngs/hero.png');
+  background-size: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -243,6 +236,20 @@ footer {
   padding: 75px 50px;
 }
 
+.scroll-viewport {
+  width: 100%;
+  padding: 0% 5%;
+  overflow: hidden;
+}
+
+.procedures-scroll-section .scroll-track {
+  gap: 240px;
+}
+
+.procedures-scroll-cell {
+  flex: 0 0 150px;
+}
+
 .scroll-button-left{
   background-color: transparent;
   border: none;
@@ -254,6 +261,24 @@ footer {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.scroll-button-disabled {
+  background-color: rgba(255, 255, 255, 1);
+  cursor: not-allowed;
+}
+
+.scroll-button-enabled {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.scroll-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
 }
 
 .scroll-middle{
@@ -397,9 +422,15 @@ footer {
   gap: 24px;
 }
 
+.services-scroll .scroll-viewport {
+  width: 1625px;
+  margin: 0 auto;
+}
+
 .services-scroll-cell {
   min-height: 520px;
   display: flex;
+  flex: 0 0 300px;
   flex-direction: column;
   border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 25px;
@@ -551,12 +582,29 @@ footer {
   width: 100%;
   background-color: rgba(66, 42, 60, 1);
   display: flex;
+  flex: 0 0 100%;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   border-radius: 40px;
   gap: 65px;
   padding: 95px 0px;
+}
+
+.testimonials-scroll-container .scroll-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.testimonials-scroll-container .scroll-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 100px;
+}
+
+.scroll-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 
 .testimonials-right {
@@ -634,8 +682,16 @@ footer {
   align-items: center;
   border: none;
   border-radius: 120px;
-  padding: 13px 19px;
+  padding: 10px 10px;
   cursor: pointer;
+}
+
+.testimonials-button-left:disabled,
+.testimonials-button-right:disabled {
+  cursor: not-allowed;
+  background-color: rgba(255, 255, 255, 1);
+  opacity: 0.5;
+  padding: 13px 19px;
 }
 
 .testimonials-button-left{
@@ -644,7 +700,10 @@ footer {
 
 .subscribe-section {
   width: 100%;
-  padding: 75px 270px;
+  padding: 75px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .subscribe-background-overlay {
@@ -653,6 +712,7 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   padding: 35px 70px;
   gap: 40px;
 }
@@ -732,6 +792,22 @@ footer {
 
 .subscribe-button:active {
   transform: scale(0.97);
+}
+
+
+.loading-spinner {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-spinner .spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
 .footer-content {
@@ -1427,13 +1503,13 @@ footer {
 
 .form-message.success {
   background-color: rgba(212, 237, 218, 0.9);
-  color: #155724;
+  color: rgba(21, 87, 36, 1);
   border: 1px solid rgba(195, 230, 203, 0.8);
 }
 
 .form-message.error {
   background-color: rgba(248, 215, 218, 0.9);
-  color: #721c24;
+  color: rgba(114, 28, 36, 1);
   border: 1px solid rgba(245, 198, 203, 0.8);
 }
 
@@ -1447,106 +1523,73 @@ footer {
   box-shadow: 0 0 0 2px rgba(66, 42, 60, 0.1);
 }
 
-.procedures-scroll-section .scroll-viewport {
-  width: 1675px;
-  margin: 0 auto;
-}
-
-.procedures-scroll-section .scroll-track {
-  gap: 160px;
-}
-
-.services-scroll .scroll-viewport {
-  width: 1625px;
-  margin: 0 auto;
-}
-
-.scroll-viewport {
-  width: 100%;
-  overflow: hidden;
-}
-
-.scroll-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.procedures-scroll-cell {
-  flex: 0 0 150px;
-}
-
-.services-scroll .scroll-track {
-  gap: 24px;
-}
-
-.services-scroll-cell {
-  flex: 0 0 300px;
-}
-
-.scroll-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  position: relative;
-}
-
-.scroll-button-left {
-  transform: rotate(180deg);
-}
-
-.testimonials-button-left:disabled,
-.testimonials-button-right:disabled {
-  cursor: default;
-  background-color: rgba(255, 255, 255, 1);
-}
-
-.testimonials-scroll-container {
-  width: 100%;
-}
-
-.testimonials-scroll-container .scroll-viewport {
-  width: 100%;
-  overflow: hidden;
-}
-
-.testimonials-scroll-container .scroll-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.testimonials-content {
-  flex: 0 0 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(66, 42, 60, 1);
-  border-radius: 40px;
-  gap: 65px;
-  padding: 95px 0px;
-}
-
-.loading-spinner {
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-.loading-spinner .spinner {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #f3f3f3;
-    border-top: 2px solid #3498db;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .form-message {
   display: none;
+}
+
+@media(max-width: 2500px) {
+  .hero-section {
+    width: 100%;
+    padding: 250px 200px;
+  }
+
+  .procedures-scroll-section {
+    padding: 125px 100px;
+    justify-content: center;
+  }
+
+
+
+
+}
+
+@media(max-width: 2150px) {
+  .hero-section {
+    width: 100%;
+    padding: 250px 150px;
+  }
+
+  .procedures-scroll-section {
+    padding: 100px 0px;
+    justify-content: center;
+  }
+}
+
+@media(max-width: 1900px) {
+  .hero-section {
+    width: 100%;
+    padding: 200px 100px;
+  }
+
+  .procedures-scroll-section {
+    padding: 75px 0px;
+    justify-content: center;
+  }
+
+  .experience-section {
+    padding: 50px 0px;
+    justify-content: center;
+  }
+
+  .services-section {
+    padding: 75px 0px;
+    justify-content: center;
+  }
+
+  .testimonials-section {
+    padding: 75px 50px;
+  }
+
+  .subscribe-section {
+    padding: 75px 0px;
+  }
+
+  .footer-content {
+    padding: 0px 50px;
+  }
 }

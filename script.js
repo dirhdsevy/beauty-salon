@@ -152,6 +152,7 @@ class LinearScroller {
     this.isAnimating = true;
     this.currentIndex++;
     this.updatePosition();
+    this.updateButtonStates();
   }
   
   scrollLeft() {
@@ -160,29 +161,38 @@ class LinearScroller {
     this.isAnimating = true;
     this.currentIndex--;
     this.updatePosition();
+    this.updateButtonStates();
   }
   
   updatePosition() {
-    const cellWidth = this.cells[0].offsetWidth;
+    const cellWidth = this.cells[0].offsetWidth + parseInt(getComputedStyle(this.track).gap);
     const translateX = -this.currentIndex * cellWidth;
     this.track.style.transform = `translateX(${translateX}px)`;
   }
   
   updateButtonStates() {
-    if (this.currentIndex <= 0) {
-      this.leftButton.disabled = true;
-      this.leftButton.style.opacity = '0.5';
-    } else {
-      this.leftButton.disabled = false;
-      this.leftButton.style.opacity = '1';
-    }
+    const isLeftDisabled = this.currentIndex <= 0;
+    this.leftButton.disabled = isLeftDisabled;
+
+    this.leftButton.classList.toggle('scroll-button-disabled', isLeftDisabled);
     
-    if (this.currentIndex >= this.totalCells - this.visibleCount) {
-      this.rightButton.disabled = true;
-      this.rightButton.style.opacity = '0.5';
-    } else {
-      this.rightButton.disabled = false;
-      this.rightButton.style.opacity = '1';
+    const leftImg = this.leftButton.querySelector('img');
+    if (leftImg) {
+      leftImg.src = isLeftDisabled 
+        ? "./images/details/arrow-scroll.svg" 
+        : "./images/details/arrow.svg";
+    }
+
+    const isRightDisabled = this.currentIndex >= this.totalCells - this.visibleCount;
+    this.rightButton.disabled = isRightDisabled;
+    
+    this.rightButton.classList.toggle('scroll-button-disabled', isRightDisabled);
+    
+    const rightImg = this.rightButton.querySelector('img');
+    if (rightImg) {
+      rightImg.src = isRightDisabled 
+        ? "./images/details/arrow-scroll.svg" 
+        : "./images/details/arrow.svg";
     }
   }
 }
